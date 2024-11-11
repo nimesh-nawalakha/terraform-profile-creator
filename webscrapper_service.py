@@ -16,14 +16,14 @@ def scrape_terraform_documentation(url):
 
         # Wait for the content to load
         WebDriverWait(driver, 300).until(
-            EC.presence_of_element_located((By.ID, 'arguments-reference'))
+            EC.presence_of_element_located((By.ID, 'argument-reference'))
         )
 
         # Get the page source and parse it with BeautifulSoup
         soup = BeautifulSoup(driver.page_source, 'html.parser')
 
         # Find the <h2> tag with id 'arguments-reference'
-        h2_tag = soup.find('h2', id='arguments-reference')
+        h2_tag = soup.find('h2', id='argument-reference')
 
         if h2_tag:
             # Initialize an empty list to store <li> tags
